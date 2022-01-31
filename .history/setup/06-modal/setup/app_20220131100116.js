@@ -8,8 +8,5 @@ const modelOverlay = document.querySelector('.modal-overlay');
 const closeBtn = document.querySelector('.close-btn');
 
 modelBtn.addEventListener('click', function(){
-    modelOverlay.classList.toggle('open-modal');
-});
-closeBtn.addEventListener('click',function(){
-    modelOverlay.classList.remove('open-modal');
+
 })
