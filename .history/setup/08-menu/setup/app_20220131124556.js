@@ -73,11 +73,11 @@ const menu = [
   },
 ];
 
-const viewPage = document.querySelector('.section-center');
+const view = document.querySelector('.section-center');
 
-window.addEventListener('DOMContentLoaded', function(){
-  let displayItems = menu.map(function(items){
-    return ` <article class="menu-item">
+view.addEventListener('DOMContentLoaded', function(){
+  const display = menu.map(function(items){
+    return `<article class="menu-item">
     <img src="${items.img}" class="photo" alt="${items.title}">
     <div class="item-info">
       <header>
@@ -87,8 +87,8 @@ window.addEventListener('DOMContentLoaded', function(){
       <p class="item-text">${items.desc}</p>
 
     </div>
-  </article>`;
+  </article>`
   });
-  displayItems = displayItems.join('');
-  viewPage.innerHTML= displayItems;
+  display = display.join('');
+  view.innerHTML = display;
 });

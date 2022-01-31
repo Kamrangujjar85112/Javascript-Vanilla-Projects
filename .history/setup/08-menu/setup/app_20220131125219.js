@@ -84,11 +84,9 @@ window.addEventListener('DOMContentLoaded', function(){
         <h4>${items.title}</h4>
         <h4 class="price">$${items.price}</h4>
       </header>
-      <p class="item-text">${items.desc}</p>
+      <p class="${items.desc}</p>
 
     </div>
   </article>`;
   });
-  displayItems = displayItems.join('');
-  viewPage.innerHTML= displayItems;
 });

@@ -72,23 +72,19 @@ const menu = [
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
+const section = document.querySelector('.section-center');
 
-const viewPage = document.querySelector('.section-center');
+let menuDisplay = section.map(function(item){
+return `<article class="menu-item">
+<img src="${item.img}" class="photo" alt="${item.title}">
+<div class="item-info">
+  <header>
+    <h4>${item.title}</h4>
+    <h4 class="price">${item.price}</h4>
+  </header>
+  <p>${item.desc}</p>
 
-window.addEventListener('DOMContentLoaded', function(){
-  let displayItems = menu.map(function(items){
-    return ` <article class="menu-item">
-    <img src="${items.img}" class="photo" alt="${items.title}">
-    <div class="item-info">
-      <header>
-        <h4>${items.title}</h4>
-        <h4 class="price">$${items.price}</h4>
-      </header>
-      <p class="item-text">${items.desc}</p>
+</div>
+</article>`
 
-    </div>
-  </article>`;
-  });
-  displayItems = displayItems.join('');
-  viewPage.innerHTML= displayItems;
-});
+})
