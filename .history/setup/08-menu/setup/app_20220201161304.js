@@ -86,29 +86,7 @@ const container = document.querySelector('.btn-container');
 
 window.addEventListener('DOMContentLoaded', function(){
   displayMenuItems(menu);
-  displayMenuBtns();
 
-}); 
-
-function displayMenuItems(menuItems){
-  let displayItems = menuItems.map(function(items){
-    return ` <article class="menu-item">
-    <img src="${items.img}" class="photo" alt="${items.title}">
-    <div class="item-info">
-      <header>
-        <h4>${items.title}</h4>
-        <h4 class="price">$${items.price}</h4>
-      </header>
-      <p class="item-text">${items.desc}</p>
-
-    </div>
-  </article>`;
-  });
-  displayItems = displayItems.join('');
-  viewPage.innerHTML= displayItems;
-}
-
-function displayMenuBtns(){
   const categories = menu.reduce(function(values, item){
     if(!values.includes(item.category)){
       values.push(item.category);
@@ -140,4 +118,22 @@ filterBtns.forEach(function(btn){
     }
   });
 });
+}); 
+
+function displayMenuItems(menuItems){
+  let displayItems = menuItems.map(function(items){
+    return ` <article class="menu-item">
+    <img src="${items.img}" class="photo" alt="${items.title}">
+    <div class="item-info">
+      <header>
+        <h4>${items.title}</h4>
+        <h4 class="price">$${items.price}</h4>
+      </header>
+      <p class="item-text">${items.desc}</p>
+
+    </div>
+  </article>`;
+  });
+  displayItems = displayItems.join('');
+  viewPage.innerHTML= displayItems;
 }

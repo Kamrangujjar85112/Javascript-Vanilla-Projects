@@ -82,13 +82,39 @@ const menu = [
 ];
 
 const viewPage = document.querySelector('.section-center');
-const container = document.querySelector('.btn-container');
+const btnContainer = document.querySelector('.btn-container');
+const filterBtns = document.querySelectorAll('.filter-btn');  
 
 window.addEventListener('DOMContentLoaded', function(){
   displayMenuItems(menu);
-  displayMenuBtns();
 
-}); 
+  const categories = menu.reduce(function(values, item){
+    if(!values.includes(item.category)){
+      values.push(item.category);
+    }
+    return values;
+  },['all']);
+  const categoryBtn = categories.map(function(category){
+    return `<button class="filter-btn"  type="button" 
+    data-id=${category}>${category}</button>`
+  }).join('');
+});
+
+filterBtns.forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = menu.filter(function(menuItem){
+      if(menuItem.category === category){
+        return menuItem;
+      }
+    });
+    if(category === 'all'){
+      displayMenuItems(menu);
+    }else{
+      displayMenuItems(menuCategory);
+    }
+  });
+});
 
 function displayMenuItems(menuItems){
   let displayItems = menuItems.map(function(items){
@@ -106,38 +132,4 @@ function displayMenuItems(menuItems){
   });
   displayItems = displayItems.join('');
   viewPage.innerHTML= displayItems;
-}
-
-function displayMenuBtns(){
-  const categories = menu.reduce(function(values, item){
-    if(!values.includes(item.category)){
-      values.push(item.category);
-    }
-    return values;
-  },['all']);
-  const categoryBtn = categories.map(function(category){
-    return `<button class="filter-btn"  type="button" 
-    data-id=${category}>${category}</button>`
-  }).join('');
-  
-container.innerHTML = categoryBtn;
-const filterBtns = document.querySelectorAll('.filter-btn'); 
-
-
-
-filterBtns.forEach(function(btn){
-  btn.addEventListener('click', function(e){
-    const category = e.currentTarget.dataset.id;
-    const menuCategory = menu.filter(function(menuItem){
-      if(menuItem.category === category){
-        return menuItem;
-      }
-    });
-    if(category === 'all'){
-      displayMenuItems(menu);
-    }else{
-      displayMenuItems(menuCategory);
-    }
-  });
-});
 }
