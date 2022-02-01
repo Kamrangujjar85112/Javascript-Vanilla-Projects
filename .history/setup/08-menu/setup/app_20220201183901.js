@@ -86,10 +86,11 @@ const container = document.querySelector('.btn-container');
 
 window.addEventListener('DOMContentLoaded', function(){
   displayMenuItems(menu);
-  displayMenuBtns();
 });
+
 function displayMenuItems(menuItems){
   let menuItem = menuItems.map(function(item){
+
     return `<article class="menu-item">
     <img src="${item.img}" class="photo" alt="${item.title}">
     <div class="item-info">
@@ -98,6 +99,7 @@ function displayMenuItems(menuItems){
         <h4 class="price">$${item.price}</h4>
       </header>
       <p class="item-text">${item.desc}</p>
+
     </div>
   </article>`;
   });
@@ -121,16 +123,26 @@ const filterBtns = container.querySelectorAll('.filter-btn');
 filterBtns.forEach(function(btn){
   btn.addEventListener('click',function(event){
     const category = event.currentTarget.dataset.id;
-    const menuCategory = menu.filter(function(menuItem){
-      if (menuItem.category===category){
-        return menuItem;
-      }
-    });
-    if(category==='all'){
-      displayMenuItems(menu);
-    }else{
-      displayMenuItems(menuCategory);
+    const menuCategory = menu.filter(function())
+
     }
   })
 })
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+  
+//     return `<button class="filter-btn"  type="button" 
+// //     data-id=${category}>${category}</button>`;
+ 
