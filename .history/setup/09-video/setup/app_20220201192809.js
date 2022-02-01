@@ -18,8 +18,4 @@ btn.addEventListener('click', function(){
         btn.classList.remove('slide');
         video.play();
     }
-});
-const preloader = document.querySelector('.preloader');
-window.addEventListener('load',function(){
-preloader.classList.add('hide-preloader')
-});
+})
