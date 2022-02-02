@@ -4,8 +4,10 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 // ********** set date ************
-const date = document.getElementById('date');
+const date = document.querySelector('.date');
 date.innerHTML = new Date().getFullYear();
+console.log(date);
+
 // ********** close links ************
 
 // ********** fixed navbar ************

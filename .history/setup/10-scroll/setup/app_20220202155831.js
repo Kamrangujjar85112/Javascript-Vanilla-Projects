@@ -5,7 +5,7 @@
 
 // ********** set date ************
 const date = document.getElementById('date');
-date.innerHTML = new Date().getFullYear();
+document.innerHTL = date.getNewDate()
 // ********** close links ************
 
 // ********** fixed navbar ************
