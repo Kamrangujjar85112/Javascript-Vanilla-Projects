@@ -29,8 +29,7 @@ const items = document.querySelectorAll('.deadline-format h4');
 let tempDate = new Date();
 let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
-let tempDay = tempDate.getDate();
-
+let tempDay = tempDate.getDay();
 
 const futureDate = new Date(tempYear,tempMonth,tempDay +10, 12, 00);
 
@@ -42,7 +41,7 @@ const day = weekdays[futureDate.getDay()];
 const hour = futureDate.getHours();
 const min = futureDate.getMinutes();
 
-giveaway.textContent = `giveaway ends on ${day} , ${date} ${month} ${year}, ${hour}:0${min}am`;
+giveaway.textContent = `giveaway ends on ${day} , ${date} ${month} ${year}, ${hour}:0${min}am`
 
 const futureTime = futureDate.getTime();
 

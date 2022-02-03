@@ -29,18 +29,26 @@ const items = document.querySelectorAll('.deadline-format h4');
 let tempDate = new Date();
 let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
-let tempDay = tempDate.getDate();
-
+let tempDay = tempDate.getDay();
 
 const futureDate = new Date(tempYear,tempMonth,tempDay +10, 12, 00);
 
 const year = futureDate.getFullYear();
 const month = months[futureDate.getMonth()];
 const date = futureDate.getDate();
-
 const day = weekdays[futureDate.getDay()];
 const hour = futureDate.getHours();
 const min = futureDate.getMinutes();
+const myDate =[];
+function format(item){
+  if(item < 10){
+    return (item = `0${item}`);
+  }
+  return item;
+}
+items.forEach(function (item, index) {
+  item.innerHTML =format(values[index]);
+});
 
 giveaway.textContent = `giveaway ends on ${day} , ${date} ${month} ${year}, ${hour}:0${min}am`;
 

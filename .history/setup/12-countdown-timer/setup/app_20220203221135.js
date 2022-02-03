@@ -29,10 +29,10 @@ const items = document.querySelectorAll('.deadline-format h4');
 let tempDate = new Date();
 let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
-let tempDay = tempDate.getDate();
+let tempDate = tempDate.getDate();
 
 
-const futureDate = new Date(tempYear,tempMonth,tempDay +10, 12, 00);
+const futureDate = new Date(tempYear,tempMonth,tempDate +5, 12, 00);
 
 const year = futureDate.getFullYear();
 const month = months[futureDate.getMonth()];

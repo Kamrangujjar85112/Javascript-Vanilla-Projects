@@ -29,8 +29,18 @@ const items = document.querySelectorAll('.deadline-format h4');
 let tempDate = new Date();
 let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
-let tempDay = tempDate.getDate();
+let tempDay = tempDate.getDay();
 
+const myDate =[temp, hours, minutes, seconds];
+function format(item){
+  if(item < 10){
+    return (item = `0${item}`);
+  }
+  return item;
+}
+items.forEach(function (item, index) {
+  item.innerHTML =format(values[index]);
+});
 
 const futureDate = new Date(tempYear,tempMonth,tempDay +10, 12, 00);
 
