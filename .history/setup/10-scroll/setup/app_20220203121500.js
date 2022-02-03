@@ -45,7 +45,7 @@ scrollLinks.forEach(function(link){
     link.addEventListener('click',function(e){
         e.preventDefault();
         const id = e.currentTarget.getAttribute('href').slice(1);
-        const element= document.getElementById(id);
+        const element = document.getElementById(id);
         const navHeight = navbar.getBoundingClientRect().height;
         const containerHeight = linksContainer.getBoundingClientRect().height;
         const fixedNav = navbar.classList.contains('fixed-nav');

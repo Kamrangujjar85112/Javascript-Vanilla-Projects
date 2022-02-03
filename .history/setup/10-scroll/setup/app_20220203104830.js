@@ -38,14 +38,38 @@ window.addEventListener('scroll', function(){
         topLink.classList.remove('show-link');
     }
 });
-// ********** smooth scroll ********** 
+// ********** smooth scroll ************
+// const scrollLinks = document.querySelectorAll('.scroll-link');
+// scrollLinks.forEach(function(link){
+//     link.addEventListener('click', function(e){
+//         e.preventDefault();
+//         const id = e.currentTarget.getAttribute('href').slice(1);
+//         const element = document.getElementById(id);
+//         const navHeight = navbar.getBoundingClientRect().height;
+//         const containerHeight = linksContainer.getBoundingClientRect().height;
+//         const fixedNav = navbar.classList.contains('fixed-nav');
+//         let position = element.offsetTop - navHeight;
+//         if(!fixedNav){
+//             position = position - navHeight;
+//         }
+//         if(navHeight > 82){
+//             position = position + containerHeight;
+//         }
+//         window.scrollTo({
+//             left: 0,
+//             top: position,
+//         });
+//         linksContainer.style.height = 0;
+//     });
+// });
 // select links
-const scrollLinks = document.querySelectorAll('.scroll-link');
+const scrollLinks= document.querySelectorAll('.scroll-links');
+
 scrollLinks.forEach(function(link){
-    link.addEventListener('click',function(e){
+    link.addEventListener('click', function(e){
         e.preventDefault();
         const id = e.currentTarget.getAttribute('href').slice(1);
-        const element= document.getElementById(id);
+        const element = document.getElementById(id);
         const navHeight = navbar.getBoundingClientRect().height;
         const containerHeight = linksContainer.getBoundingClientRect().height;
         const fixedNav = navbar.classList.contains('fixed-nav');
@@ -54,12 +78,12 @@ scrollLinks.forEach(function(link){
             position = position - navHeight;
         }
         if(navHeight > 82){
-            position = position + containerHeight;
+            position = position +containerHeight;
         }
         window.scrollTo({
             left: 0,
             top: position,
-        })
+        });
         linksContainer.style.height = 0;
-    })
-})
+    });
+});
