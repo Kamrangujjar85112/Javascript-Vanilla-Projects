@@ -26,8 +26,8 @@ form.addEventListener('submit',function(event){
   }else{
     let paras = text.slice(0,value);
     paras = paras.map(function(numOfParas){
-      return `<p class="result">${numOfParas}</p>`;
+      return `<pclass="result">${numOfParas}</p>`;
     }).join('');
     result.innerHTML = paras;
   }
-});
+})

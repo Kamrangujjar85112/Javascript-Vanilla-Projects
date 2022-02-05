@@ -16,18 +16,12 @@ const form = document.querySelector('.lorem-form');
 const result = document.querySelector('.lorem-text');
 const amount = document.getElementById('amount');
 
-form.addEventListener('submit',function(event){
-  event.preventDefault();
+form.addEventListener('submit', function(e){
+  e.preventDefault();
   const value = parseInt(amount.value);
-  const random = Math.floor(Math.random() * text.length);
+  const random = Math.floor(Math.random * text.length);
 
-  if(isNaN(value) || value <= 0 || value > 9){
-    result.innerHTML = `<p class="result">${text[random]}</p>`;
-  }else{
-    let paras = text.slice(0,value);
-    paras = paras.map(function(numOfParas){
-      return `<p class="result">${numOfParas}</p>`;
-    }).join('');
-    result.innerHTML = paras;
+  if(isNaN(value) || value <=0 || value > 9){
+    result.innerHTML = `<p class="result">${value[random]}</p>`;
   }
-});
+})
