@@ -17,12 +17,8 @@ form.addEventListener('submit',addItem);
 function addItem(e){
     e.preventDefault();
     const value = grocery.value;
-    const id = new Date().getTime().toString();
+
     if(value && !editFlag){
-
-    }else if(value && editFlag){
-
-    }else{
         
     }
 }
