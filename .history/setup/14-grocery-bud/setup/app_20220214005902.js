@@ -37,8 +37,8 @@ function addItem(e){
           <i class="fas fa-trash"></i>
           </button>
         </div>`;
-        const deleteBtn = element.querySelector('.delete-btn');
-        const editBtn = element.querySelector('.edit-btn');
+        const deleteBtn = document.querySelector('.delete-btn');
+        const editBtn = document.querySelector('.edit-btn');
         deleteBtn.addEventListener('click',deleteItem);
         editBtn.addEventListener('click',editItem);
 // append child
@@ -77,20 +77,16 @@ function clearItems(){
     container.classList.remove('show-container');
     displayAlert('items are cleared','danger');
     setBackToDefault(); 
-    // localStorage.removeItem('list');
 }
 // deleteItem
 function deleteItem(e) {
     const element = e.currentTarget.parentElement.parentElement;
-    const id = element.dataset.id;
     list.removeChild(element);
     if(list.children.length === 0){
         container.classList.remove('show-container');
     }
     displayAlert('item deleted','danger');
     setBackToDefault();
-    // removeFromLocalStorage
-    // removeFromLocalStorage(id);
 }
 // editItem
 function editItem() {
@@ -106,8 +102,6 @@ function setBackToDefault(){
 }
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id,value){
-}
-function removeFromLocalStorage(id){
 
 }
 // ****** SETUP ITEMS **********
