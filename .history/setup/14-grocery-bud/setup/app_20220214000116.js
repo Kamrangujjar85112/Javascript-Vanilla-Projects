@@ -60,7 +60,7 @@ function displayAlert(text, action){
     setTimeout(function(){
         alert.textContent= "";
         alert.classList.remove(`alert-${action}`);
-    },1000)
+    },1500)
 }
 // clearItems function
 function clearItems(){

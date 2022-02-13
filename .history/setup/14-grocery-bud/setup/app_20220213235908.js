@@ -60,11 +60,11 @@ function displayAlert(text, action){
     setTimeout(function(){
         alert.textContent= "";
         alert.classList.remove(`alert-${action}`);
-    },1000)
+    },1500)
 }
 // clearItems function
 function clearItems(){
-    const items = document.querySelectorAll('.grocery-item');
+    const items = document.querySelectorAll('grocery-item');
     if(items.length > 0){
         items.forEach(function(item){
             list.removeChild(item)

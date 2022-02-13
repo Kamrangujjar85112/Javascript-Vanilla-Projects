@@ -12,10 +12,7 @@ let editElement;
 let editFlag=false;
 let editID="";
 // ****** EVENT LISTENERS **********
-// form-submit
 form.addEventListener('submit',addItem);
-// clearItems
-clearBtn.addEventListener('click',clearItems);
 // ****** FUNCTIONS **********
 function addItem(e){
     e.preventDefault();
@@ -24,28 +21,22 @@ function addItem(e){
  
     if(value && !editFlag){
         const element = document.createElement('article');
-        element.classList.add('grocery-item');
+        element,classList.add('grocery-item');
         const attribute = document.createAttribute('data-id');
         attribute.value = id;
         element.setAttributeNode(attribute);
-        element.innerHTML = ` <p class="title">${value}</p>
+        element.innerHTML = `
+        <p class="title">${value}</p>
         <div class="btn-container">
-          <button type="button" class="edit-btn">
-          <i class="fas fa-edit"></i>
-          </button>
-          <button type="button" class="delete-btn">
-          <i class="fas fa-trash"></i>
-          </button>
+          <button type="button" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button type="button" class="delete-btn"><i class="fas fa-trash"></i></button>
         </div>`;
 // append child
 list.appendChild(element);
-// displayAlert
-displayAlert('item has been added','success');
-// show container
+displayAlert('item has been added', 'success');
+
 container.classList.add('show-container');
-// add to local storage
-addToLocalStorage(id,value);
-setBackToDefault();
+
     }else if(value && editFlag){
 console.log('I');
     }else{
@@ -60,29 +51,8 @@ function displayAlert(text, action){
     setTimeout(function(){
         alert.textContent= "";
         alert.classList.remove(`alert-${action}`);
-    },1000)
-}
-// clearItems function
-function clearItems(){
-    const items = document.querySelectorAll('.grocery-item');
-    if(items.length > 0){
-        items.forEach(function(item){
-            list.removeChild(item)
-        });
-    }
-    container.classList.remove('show-container');
-    displayAlert('items are cleared','danger');
-    setBackToDefault();
-}
-// setBackToDefault
-function setBackToDefault(){
-    grocery.value = '';
-    editFlag = false;
-    editID = '';
-    submitBtn.textContent = 'submit';
+    },1500)
 }
 // ****** LOCAL STORAGE **********
-function addToLocalStorage(id,value){
 
-}
 // ****** SETUP ITEMS **********
