@@ -26,7 +26,7 @@ function addItem(e){
         attribute.value = id;
         element.setAttributeNode(attribute);
         element.innerHTML = `
-        <p class="title">${value}</p>
+        <p class="title">item</p>
         <div class="btn-container">
           <button type="button" class="edit-btn"><i class="fas fa-edit"></i></button>
           <button type="button" class="delete-btn"><i class="fas fa-trash"></i></button>

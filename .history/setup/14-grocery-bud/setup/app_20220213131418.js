@@ -20,19 +20,9 @@ function addItem(e){
     const id = new Date().getTime().toString();
  
     if(value && !editFlag){
-        const element = document.createElement('article');
-        element,classList.add('grocery-item');
-        const attribute = document.createAttribute('data-id');
-        attribute.value = id;
-        element.setAttributeNode(attribute);
-        element.innerHTML = `
-        <p class="title">${value}</p>
-        <div class="btn-container">
-          <button type="button" class="edit-btn"><i class="fas fa-edit"></i></button>
-          <button type="button" class="delete-btn"><i class="fas fa-trash"></i></button>
-        </div>`
+        
     }else if(value && editFlag){
-
+        
     }else{
         displayAlert('please enter a value','danger')
     }
