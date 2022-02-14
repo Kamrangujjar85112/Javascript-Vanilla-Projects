@@ -117,7 +117,7 @@ function setBackToDefault(){
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id,value){
     const grocery = {id, value};
-    let items = getFromLocalStorage();
+    let items = addToLocalStorage();
     items.push(grocery);
     localStorage.setItem('list',JSON.stringify(items))
 }
@@ -132,14 +132,7 @@ function removeFromLocalStorage(id){
     localStorage.setItem('list',JSON.stringify(items));
 }
 function editLocalStorage(id,value){
-    let items = getFromLocalStorage();
-    items.map(function(item){
-        if(item.id === id){
-            item.value = value;
-        }
-        return item;
-    })
-    localStorage.setItem('list',JSON.stringify(items));
+
 }
 function getFromLocalStorage(){
     return localStorage.getItem('list')? JSON.parse(localStorage.getItem('list')) : [];

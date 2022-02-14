@@ -81,7 +81,7 @@ function clearItems(){
     container.classList.remove('show-container');
     displayAlert('items are cleared','danger');
     setBackToDefault(); 
-    localStorage.removeItem('list');
+    // localStorage.removeItem('list');
 }
 // deleteItem
 function deleteItem(e) {
@@ -94,7 +94,7 @@ function deleteItem(e) {
     displayAlert('item deleted','danger');
     setBackToDefault();
     // removeFromLocalStorage
-    removeFromLocalStorage(id);
+    // removeFromLocalStorage(id);
 }
 // editItem
 function editItem(e) {
@@ -117,31 +117,14 @@ function setBackToDefault(){
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id,value){
     const grocery = {id, value};
-    let items = getFromLocalStorage();
+    let items = localStorage.getItem('list')? JSON.parse(localStorage.getItem('list')) : [];
     items.push(grocery);
     localStorage.setItem('list',JSON.stringify(items))
 }
 function removeFromLocalStorage(id){
-    let items = getFromLocalStorage();
-    items.filter(function(item){
-        if(item.id !== id)
-        {
-            return item;
-        }
-    })
-    localStorage.setItem('list',JSON.stringify(items));
+
 }
 function editLocalStorage(id,value){
-    let items = getFromLocalStorage();
-    items.map(function(item){
-        if(item.id === id){
-            item.value = value;
-        }
-        return item;
-    })
-    localStorage.setItem('list',JSON.stringify(items));
-}
-function getFromLocalStorage(){
-    return localStorage.getItem('list')? JSON.parse(localStorage.getItem('list')) : [];
+
 }
 // ****** SETUP ITEMS **********
