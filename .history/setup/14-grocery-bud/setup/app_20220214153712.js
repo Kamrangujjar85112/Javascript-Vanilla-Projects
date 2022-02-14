@@ -51,14 +51,10 @@ container.classList.add('show-container');
 addToLocalStorage(id,value);
 setBackToDefault();
     }else if(value && editFlag){
-            editElement.innerHTML = value;
-            displayAlert('Item edited','success')
-            // edit local storage
-            editLocalStorage(editID,value);
-            setBackToDefault();
-            }else{
-             displayAlert('please enter a value','danger')
-            }
+console.log('I');
+    }else{
+        displayAlert('please enter a value','danger')
+    }
 }
 // displayAlert
 function displayAlert(text, action){
@@ -99,12 +95,9 @@ function deleteItem(e) {
 // editItem
 function editItem(e) {
     const element = e.currentTarget.parentElement.parentElement;
-    editElement = e.currentTarget.parentElement.previousElementSibling;
+    const editElement = e.currentTarget.parentElement.previousElementSibling;
     grocery.value = editElement.innerHTML;
-    editFlag = true;
-    editID= element.dataset.id;
-    submitBtn.textContent = 'edit';
-
+    
 }
 
 // setBackToDefault
@@ -118,9 +111,6 @@ function setBackToDefault(){
 function addToLocalStorage(id,value){
 }
 function removeFromLocalStorage(id){
-
-}
-function editLocalStorage(id,value){
 
 }
 // ****** SETUP ITEMS **********

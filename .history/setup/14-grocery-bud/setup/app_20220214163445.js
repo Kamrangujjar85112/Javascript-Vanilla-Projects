@@ -81,7 +81,7 @@ function clearItems(){
     container.classList.remove('show-container');
     displayAlert('items are cleared','danger');
     setBackToDefault(); 
-    // localStorage.removeItem('list');
+    localStorage.removeItem('list');
 }
 // deleteItem
 function deleteItem(e) {
@@ -94,12 +94,12 @@ function deleteItem(e) {
     displayAlert('item deleted','danger');
     setBackToDefault();
     // removeFromLocalStorage
-    // removeFromLocalStorage(id);
+    removeFromLocalStorage(id);
 }
 // editItem
 function editItem(e) {
     const element = e.currentTarget.parentElement.parentElement;
-    editElement = e.currentTarget.parentElement.previousElementSibling;
+    const editElement = e.currentTarget.parentElement.previousElementSibling;
     grocery.value = editElement.innerHTML;
     editFlag = true;
     editID= element.dataset.id;

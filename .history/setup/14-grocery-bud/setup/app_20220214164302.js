@@ -39,8 +39,8 @@ function addItem(e){
         </div>`;
         const deleteBtn = element.querySelector('.delete-btn');
         const editBtn = element.querySelector('.edit-btn');
-        deleteBtn.addEventListener('click',deleteItem);
-        editBtn.addEventListener('click',editItem);
+        deleteBtn.addEventListener('click',deleteItem(e));
+        editBtn.addEventListener('click',editItem(e));
 // append child
 list.appendChild(element);
 // displayAlert
@@ -99,7 +99,7 @@ function deleteItem(e) {
 // editItem
 function editItem(e) {
     const element = e.currentTarget.parentElement.parentElement;
-    editElement = e.currentTarget.parentElement.previousElementSibling;
+    const editElement = e.currentTarget.parentElement.previousElementSibling;
     grocery.value = editElement.innerHTML;
     editFlag = true;
     editID= element.dataset.id;
